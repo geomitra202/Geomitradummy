@@ -31,7 +31,7 @@ body {
     max-height: 80vh; /* Adjust for screen size */
     overflow-y: auto; /* Enable vertical scrolling */
     margin-bottom: 20px; /* Prevent content from getting cut */
-    border: 2px solid red;
+    
 }
 
 
