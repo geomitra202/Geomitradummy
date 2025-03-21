@@ -124,7 +124,22 @@ function prevQuestion() {
 
 // Timer Function
 function startTimer(duration) {
-    let timeLeft = duration;
+    let startTime = localStorage.getItem("quizStartTime");
+    let currentTime = Math.floor(Date.now() / 1000);
+    let timeLeft;
+
+    if (startTime) {
+        timeLeft = duration - (currentTime - parseInt(startTime));
+        if (timeLeft <= 0) {
+            timeLeft = 0;
+            alert("Time's up! Submitting your quiz...");
+            submitQuiz();
+            return;
+        }
+    } else {
+        localStorage.setItem("quizStartTime", currentTime);
+        timeLeft = duration;
+    }
 
     function updateTimerDisplay() {
         let hours = Math.floor(timeLeft / 3600);
@@ -136,18 +151,24 @@ function startTimer(duration) {
 
     updateTimerDisplay(); // Update display initially
 
-    timerInterval = setInterval(() => {
+    let timerInterval = setInterval(() => {
         timeLeft--;
 
-        if (timeLeft < 0) {
+        if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert("Time's up! Submitting your quiz...");
-            submitQuiz(); // Auto-submit when time runs out
+            submitQuiz();
         } else {
             updateTimerDisplay();
         }
     }, 1000);
 }
+
+// Call this function when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+    startTimer(2 * 60 * 60); // 2 hours in seconds
+});
+
 
 // Submit Quiz
 function submitQuiz() {
