@@ -57,7 +57,7 @@ const questions = [
 
 
 const notes = [
-   "Draw the horizontal line L0 at y=A \n Let Series P=0, 0, 1, 1, 2, 2..... and Series Q= 4, 5.5, 7, 8.5, 10, 11.5..... \nPlot and join the points (P1,Q1), (P2,Q2), (P3,Q3),.....till (P12,Q12) \nHint: ( P1 , Q1 ) = ( 0 , 4 ) and ( P12 , Q12) = ( 5 , 20.5)",
+   "Keep Your grid sheets in portrait position\nMark X axis from left to right and Y axis from down to up at the border of the grid sheet\n The bottom left corner will be the origin (0,0) \n Draw the horizontal line L0 at y=A \n Let Series P=0, 0, 1, 1, 2, 2..... and Series Q= 4, 5.5, 7, 8.5, 10, 11.5..... \nPlot and join the points (P1,Q1), (P2,Q2), (P3,Q3),.....till (P12,Q12) \nHint: ( P1 , Q1 ) = ( 0 , 4 ) and ( P12 , Q12) = ( 5 , 20.5)",
     "",
     "",
     "",
